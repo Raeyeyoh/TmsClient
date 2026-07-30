@@ -1,4 +1,4 @@
-import { Component, signal, computed, inject } from '@angular/core';
+import { Component, signal, computed, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CourseCardComponent } from '../../ui/course-card/course-card';
 import { Course } from '../../models/course.model';
 import { RouterLink } from '@angular/router';
@@ -9,6 +9,7 @@ import { CourseService } from '../../services/course.service';
   standalone: true,
   templateUrl: './student-dashboard.html', // Points to the HTML file
   imports: [CourseCardComponent, RouterLink],
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './student-dashboard.scss', // Points to the styles file
 })
 export class StudentDashboardComponent {
