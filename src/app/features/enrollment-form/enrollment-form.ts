@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -11,6 +11,7 @@ import {
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './enrollment-form.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './enrollment-form.scss',
 })
 export class EnrollmentFormComponent {
