@@ -4,11 +4,12 @@ import { Course } from '../../models/course.model';
 import { RouterLink } from '@angular/router';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { CourseService } from '../../services/course.service';
+import { EnrollmentListComponent } from '../enrollment-list/enrollment-list';
 @Component({
   selector: 'app-student-dashboard', // The HTML tag name: <app-student-dashboard />
   standalone: true,
   templateUrl: './student-dashboard.html', // Points to the HTML file
-  imports: [CourseCardComponent, RouterLink],
+  imports: [CourseCardComponent, RouterLink, EnrollmentListComponent],
   changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './student-dashboard.scss', // Points to the styles file
 })
@@ -22,6 +23,7 @@ export class StudentDashboardComponent {
   registerForClass() {
     this.earnedCredits.update((c) => c + 3);
   }
+
   selectedCourse = signal<Course | null>(null);
   // sampleCourse: Course = {
   //   id: 1,
