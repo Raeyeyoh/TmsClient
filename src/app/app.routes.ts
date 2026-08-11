@@ -4,13 +4,12 @@
 import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
-    path: 'dashboard',
+    path: 'studentdashboard',
     loadComponent: () =>
       import('./features/student-dashboard/student-dashboard').then(
         (m) => m.StudentDashboardComponent,
       ),
   },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'courses/:id',
     loadComponent: () =>
@@ -20,5 +19,25 @@ export const routes: Routes = [
     path: 'enroll',
     loadComponent: () =>
       import('./features/enrollment-form/enrollment-form').then((m) => m.EnrollmentFormComponent),
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./features/instructor-dashboard/instructor-dashboard').then(
+        (m) => m.InstructorDashboardComponent,
+      ),
+  },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  {
+    path: 'enrollments',
+    loadComponent: () =>
+      import('./features/enrollment-list/enrollment-list').then((m) => m.EnrollmentListComponent),
+  },
+  {
+    path: 'grade-submission',
+    loadComponent: () =>
+      import('./features/grade-submission/grade-submission').then(
+        (m) => m.GradeSubmissionComponent,
+      ),
   },
 ];
